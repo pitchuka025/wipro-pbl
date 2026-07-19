@@ -17,9 +17,9 @@ public class Exception2 {
             System.out.println("Sum = " + sum);
             System.out.println("Average = " + average);
         } catch (NumberFormatException e) {
-            System.out.println("NumberFormatException");
+            System.out.println("All arguments must be integers: " + e.getMessage());
         } catch (ArithmeticException e) {
-            System.out.println("ArithmeticException");
+            System.out.println("Arithmetic error: " + e.getMessage());
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }

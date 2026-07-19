@@ -30,7 +30,10 @@ public class Exception3 {
                     try {
                         marks = Integer.parseInt(input);
                     } catch (NumberFormatException e) {
-                        throw new NumberFormatException("Please enter an integer value.");
+                        NumberFormatException nfe =
+                                new NumberFormatException("Please enter an integer value.");
+                        nfe.initCause(e);
+                        throw nfe;
                     }
 
                     if (marks < 0) {
