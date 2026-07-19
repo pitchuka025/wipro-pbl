@@ -7,7 +7,7 @@ public class EvenOdd {
         System.out.print("Enter a number: ");
         int n = sc.nextInt();
 
-        if (n % 2 == 0) {
+        if (NumberUtils.isEven(n)) {
             System.out.println("Even");
         } else {
             System.out.println("Odd");

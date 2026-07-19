@@ -3,10 +3,7 @@ import java.util.Scanner;
 public class IsEven {
 
     public static int isEven(int num) {
-        if (num % 2 == 0)
-            return 2;
-        else
-            return 1;
+        return NumberUtils.isEven(num) ? 2 : 1;
     }
 
     public static void main(String[] args) {

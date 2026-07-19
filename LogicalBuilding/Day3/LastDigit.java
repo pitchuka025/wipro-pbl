@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class LastDigit {
 
     public static int getLastDigit(int num) {
-        return Math.abs(num % 10);
+        return NumberUtils.getLastDigit(num);
     }
 
     public static void main(String[] args) {

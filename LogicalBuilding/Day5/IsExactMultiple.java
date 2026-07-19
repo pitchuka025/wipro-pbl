@@ -3,13 +3,7 @@ import java.util.Scanner;
 public class IsExactMultiple {
 
     public static int isExactMultiple(int n, int m) {
-        if (m == 0)
-            return 1; // Invalid case
-        
-        if (n % m == 0)
-            return 2; // Yes, N is an exact multiple of M
-        else
-            return 1; // No, N is not an exact multiple of M
+        return NumberUtils.isExactMultiple(n, m) ? 2 : 1;
     }
 
     public static void main(String[] args) {

@@ -5,15 +5,15 @@ public class CountOdd {
     public static int countOdd(int num1, int num2, int num3, int num4, int num5) {
         int count = 0;
 
-        if (num1 % 2 != 0)
+        if (NumberUtils.isOdd(num1))
             count++;
-        if (num2 % 2 != 0)
+        if (NumberUtils.isOdd(num2))
             count++;
-        if (num3 % 2 != 0)
+        if (NumberUtils.isOdd(num3))
             count++;
-        if (num4 % 2 != 0)
+        if (NumberUtils.isOdd(num4))
             count++;
-        if (num5 % 2 != 0)
+        if (NumberUtils.isOdd(num5))
             count++;
 
         return count;

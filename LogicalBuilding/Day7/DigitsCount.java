@@ -2,13 +2,7 @@ import java.util.Scanner;
 
 public class DigitsCount {
     public static int countDigits(int n) {
-        int count = 0;
-        int number = Math.abs(n);
-        do {
-            number /= 10;
-            count++;
-        } while (number != 0);
-        return count;
+        return NumberUtils.countDigits(n);
     }
 
     public static void main(String[] args) {

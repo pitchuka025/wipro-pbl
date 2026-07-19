@@ -12,7 +12,7 @@ public class SumEvenOdd {
 
         int sum = a + b;
 
-        if (sum % 2 == 0) {
+        if (NumberUtils.isEven(sum)) {
             System.out.println("Sum is Even");
         } else {
             System.out.println("Sum is Odd");

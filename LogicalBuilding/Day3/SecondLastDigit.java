@@ -3,13 +3,7 @@ import java.util.Scanner;
 public class SecondLastDigit {
 
     public static int getSecondLastDigit(int num) {
-
-        num = Math.abs(num);
-
-        if (num < 10)
-            return -1;
-
-        return (num / 10) % 10;
+        return NumberUtils.getSecondLastDigit(num);
     }
 
     public static void main(String[] args) {
