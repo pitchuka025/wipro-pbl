@@ -1,0 +1,4 @@
+com\wipro\test\AllTests.class
+com\wipro\test\TestStringConcat.class
+com\wipro\test\TestSort.class
+com\wipro\test\TestCheckPresence.class
