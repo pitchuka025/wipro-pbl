@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registration</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <h1>Registration Form</h1>
+    <form id="registerForm">
+      <label>User Id:
+        <input type="text" id="reg_userid" name="userid" required />
+      </label>
+
+      <label>Password:
+        <input type="password" id="reg_password" name="password" required />
+      </label>
+
+      <label>Date Of birth:
+        <input type="date" id="reg_dob" name="dob" required />
+      </label>
+
+      <fieldset>
+        <legend>Gender</legend>
+        <label><input type="radio" name="gender" value="Male" checked> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+      </fieldset>
+
+      <label>State:
+        <select id="reg_state">
+          <option>Karnataka</option>
+          <option>Maharashtra</option>
+          <option>Delhi</option>
+          <option>Tamil Nadu</option>
+        </select>
+      </label>
+
+      <label>Contact number:
+        <input type="tel" id="reg_contact" name="contact" inputmode="numeric" required />
+      </label>
+
+      <label>Address:
+        <textarea id="reg_address" rows="4"></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+
+      <p id="registerError" class="error" aria-live="polite"></p>
+      <p id="registerSuccess" class="success" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
