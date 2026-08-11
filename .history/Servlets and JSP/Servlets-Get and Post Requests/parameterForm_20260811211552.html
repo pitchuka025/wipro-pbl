@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Servlet Parameters</title>
+</head>
+<body>
+    <h1>Send Parameters to FirstTimeVisitorServlet</h1>
+    <p>Use one of the forms below to send GET or POST parameters to <code>/wipropbl/firsttime</code>.</p>
+
+    <h2>GET Request</h2>
+    <form method="get" action="http://localhost:8080/wipropbl/firsttime">
+        <label>
+            Name: <input type="text" name="name" value="John Doe">
+        </label><br><br>
+        <label>
+            Age: <input type="number" name="age" value="25">
+        </label><br><br>
+        <label>
+            Color: <input type="text" name="color" value="blue">
+        </label><br><br>
+        <button type="submit">Send GET</button>
+    </form>
+
+    <h2>POST Request</h2>
+    <form method="post" action="http://localhost:8080/wipropbl/firsttime">
+        <label>
+            Name: <input type="text" name="name" value="Jane Smith">
+        </label><br><br>
+        <label>
+            Email: <input type="email" name="email" value="jane@example.com">
+        </label><br><br>
+        <label>
+            Interests:<br>
+            <input type="checkbox" name="interest" value="Java"> Java<br>
+            <input type="checkbox" name="interest" value="Servlets"> Servlets<br>
+            <input type="checkbox" name="interest" value="HTML"> HTML<br>
+        </label><br>
+        <button type="submit">Send POST</button>
+    </form>
+</body>
+</html>

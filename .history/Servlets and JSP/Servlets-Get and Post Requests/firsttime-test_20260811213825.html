@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Firsttime Servlet</title>
+</head>
+<body>
+    <h1>Test Firsttime Servlet</h1>
+    <p>Open the servlet directly or use the forms below.</p>
+
+    <h2>GET</h2>
+    <form method="get" action="http://localhost:8080/wipropbl/firsttime">
+        Name: <input type="text" name="name" value="Alice"><br>
+        Age: <input type="number" name="age" value="30"><br>
+        <button type="submit">Send GET</button>
+    </form>
+
+    <h2>POST</h2>
+    <form method="post" action="http://localhost:8080/wipropbl/firsttime">
+        Name: <input type="text" name="name" value="Bob"><br>
+        Email: <input type="email" name="email" value="bob@example.com"><br>
+        <button type="submit">Send POST</button>
+    </form>
+</body>
+</html>
