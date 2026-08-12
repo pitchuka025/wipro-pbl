@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Sign Up Module</title>
+
+    <style>
+        /* Page background */
+        body {
+            background-color: purple;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Current date and time */
+        #datetime {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Form */
+        .container {
+            width: 450px;
+            margin: 80px auto;
+            background-color: gray;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px black;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Text boxes */
+        input[type="text"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        /* Text box background + shadow when cursor enters */
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            background-color: #555;
+            color: white;
+            box-shadow: 0 0 10px black;
+            outline: none;
+        }
+
+        /* Text area background + shadow when cursor enters */
+        textarea:focus {
+            background-color: #555;
+            color: white;
+            box-shadow: 0 0 10px black;
+            outline: none;
+        }
+
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        /* Radio buttons */
+        .gender {
+            color: white;
+            margin-top: 8px;
+        }
+
+        .gender input {
+            margin-right: 5px;
+        }
+
+        /* Submit button */
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            background-color: #222;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: none;
+        }
+
+        /* Submit hover */
+        input[type="submit"]:hover {
+            background-color: purple;
+            color: white;
+            box-shadow: 0 0 10px black;
+        }
+
+        #error {
+            color: yellow;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Current Date and Time -->
+    <div id="datetime"></div>
+
+    <div class="container">
+
+        <h1>User Sign Up</h1>
+
+        <form onsubmit="return validateForm()">
+
+            <!-- First Name -->
+            <label>First Name</label>
+            <input type="text" id="fname">
+
+            <!-- Last Name -->
+            <label>Last Name</label>
+            <input type="text" id="lname">
+
+            <!-- Password -->
+            <label>Password</label>
+            <input type="password" id="password">
+
+            <!-- Confirm Password -->
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword">
+
+            <!-- Gender -->
+            <label>Gender</label>
+            <div class="gender">
+                <input type="radio" name="gender" value="Male"> Male
+
+                <input type="radio" name="gender" value="Female"> Female
+
+                <input type="radio" name="gender" value="Other"> Other
+            </div>
+
+            <!-- Mobile Number -->
+            <label>Mobile Number</label>
+            <input type="text" id="mobile" maxlength="10">
+
+            <!-- Address -->
+            <label>Address</label>
+            <textarea id="address"></textarea>
+
+            <!-- Error Message -->
+            <div id="error"></div>
+
+            <!-- Submit -->
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
+
+    <script>
+
+        /* Display Current Date and Time */
+        function showDateTime() {
+            var now = new Date();
+
+            var date = now.toLocaleDateString();
+            var time = now.toLocaleTimeString();
+
+            document.getElementById("datetime").innerHTML =
+                "Date: " + date + " | Time: " + time;
+        }
+
+        setInterval(showDateTime, 1000);
+        showDateTime();
+
+
+        /* Validation Function */
+        function validateForm() {
+
+            var fname = document.getElementById("fname").value.trim();
+            var lname = document.getElementById("lname").value.trim();
+            var password = document.getElementById("password").value;
+            var confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            var mobile = document.getElementById("mobile").value.trim();
+            var address = document.getElementById("address").value.trim();
+
+            var error = document.getElementById("error");
+
+
+            /* First Name validation */
+            if (fname == "") {
+                error.innerHTML = "First Name must be entered";
+                return false;
+            }
+
+            if (!/^[A-Za-z]+$/.test(fname)) {
+                error.innerHTML = "First Name must contain only characters";
+                return false;
+            }
+
+
+            /* Last Name validation */
+            if (lname == "") {
+                error.innerHTML = "Last Name must be entered";
+                return false;
+            }
+
+            if (!/^[A-Za-z]+$/.test(lname)) {
+                error.innerHTML = "Last Name must contain only characters";
+                return false;
+            }
+
+
+            /* Password validation */
+            if (password == "") {
+                error.innerHTML = "Password must be entered";
+                return false;
+            }
+
+            if (password.length < 6 || password.length > 20) {
+                error.innerHTML =
+                    "Password length should be between 6 to 20 characters";
+                return false;
+            }
+
+
+            /* Confirm Password validation */
+            if (confirmPassword == "") {
+                error.innerHTML = "Confirm Password must be entered";
+                return false;
+            }
+
+            if (confirmPassword.length < 6 ||
+                confirmPassword.length > 20) {
+
+                error.innerHTML =
+                    "Confirm Password length should be between 6 to 20 characters";
+                return false;
+            }
+
+            if (password != confirmPassword) {
+                error.innerHTML = "Password and Confirm Password must be same";
+                return false;
+            }
+
+
+            /* Gender validation */
+            var gender = document.querySelector(
+                'input[name="gender"]:checked'
+            );
+
+            if (gender == null) {
+                error.innerHTML = "Gender must be selected";
+                return false;
+            }
+
+
+            /* Mobile Number validation */
+            if (mobile == "") {
+                error.innerHTML = "Mobile Number must be entered";
+                return false;
+            }
+
+            if (!/^[6-9][0-9]{9}$/.test(mobile)) {
+                error.innerHTML =
+                    "Mobile Number must be a valid 10 digit number";
+                return false;
+            }
+
+
+            /* Address validation */
+            if (address == "") {
+                error.innerHTML = "Address must be entered";
+                return false;
+            }
+
+
+            /* All validations successful */
+            error.style.color = "lightgreen";
+            error.innerHTML = "Registration Successful!";
+
+            return false;
+        }
+
+    </script>
+
+</body>
+</html>
