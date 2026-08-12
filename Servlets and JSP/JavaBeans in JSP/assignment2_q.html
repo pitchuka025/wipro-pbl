@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operation Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            color: #333;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Operation Selector</h1>
+        <form action="OperationServlet" method="post">
+            <div class="form-group">
+                <label for="operation">Enter a Number:</label>
+                <input type="number" id="operation" name="operation" placeholder="Enter number" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="info">
+            <strong>Rules:</strong>
+            <ul>
+                <li>&lt; 10 → Page 1</li>
+                <li>10-99 → Page 2</li>
+                <li>&gt;= 100 → Error Page</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
