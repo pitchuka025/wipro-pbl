@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Email>
+    <From>me@wipro.com</From>
+    <To>you@wipro.com</To>
+    <Subject>Re: XML</Subject>
+    <Message>I'm working on XML now.</Message>
+</Email>

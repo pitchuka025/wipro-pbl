@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Auction - AP Auctions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .form-section {
+            background-color: #f9f3e6;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .checkbox-label {
+            display: inline;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .error-message {
+            color: #d32f2f;
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const itemId = document.getElementById("itemId").value.trim();
+            const itemName = document.getElementById("itemName").value.trim();
+            const yourName = document.getElementById("yourName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const bidAmount = document.getElementById("bidAmount").value.trim();
+            const errorMessage = document.getElementById("errorMessage");
+            
+            // Reset error message
+            errorMessage.style.display = "none";
+            
+            // Validate empty fields
+            if (!itemId || !itemName || !yourName || !email || !bidAmount) {
+                errorMessage.innerHTML = "Required Data Missing! Enter and Resubmit.";
+                errorMessage.style.display = "block";
+                return false;
+            }
+            
+            // Validate email format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                errorMessage.innerHTML = "Invalid email format! Please enter a valid email.";
+                errorMessage.style.display = "block";
+                return false;
+            }
+            
+            // Validate bid amount is a positive number
+            if (isNaN(bidAmount) || parseFloat(bidAmount) <= 0) {
+                errorMessage.innerHTML = "Bid amount must be a positive number!";
+                errorMessage.style.display = "block";
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to AP Auctions. Please Enter Bid.</h1>
+        </div>
+        
+        <div class="form-section">
+            <form action="BidServlet" method="POST" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="itemId">Item ID:</label>
+                    <input type="text" id="itemId" name="itemId" placeholder="Enter Item ID">
+                </div>
+                
+                <div class="form-group">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" name="itemName" placeholder="Enter Item Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="yourName">Your Name:</label>
+                    <input type="text" id="yourName" name="yourName" placeholder="Enter Your Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="bidAmount">Amount Bid:</label>
+                    <input type="number" id="bidAmount" name="bidAmount" step="0.01" placeholder="Enter Bid Amount">
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="autoIncrement" name="autoIncrement" value="true">
+                        <label for="autoIncrement" class="checkbox-label">Auto-increment bid to match other bidders?:</label>
+                    </div>
+                </div>
+                
+                <button type="submit">Submit Bid</button>
+                
+                <div class="error-message" id="errorMessage"></div>
+            </form>
+        </div>
+        
+        <div class="footer">
+            <p>None of the fields should be empty. Perform necessary validations on the HTML Page.</p>
+        </div>
+    </div>
+</body>
+</html>

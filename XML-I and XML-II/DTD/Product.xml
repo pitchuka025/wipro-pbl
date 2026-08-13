@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE products [
+    <!ELEMENT products (product+)>
+    <!ELEMENT product (code, price, colors)>
+    <!ELEMENT code (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT colors (color+)>
+    <!ELEMENT color (#PCDATA)>
+]>
+
+<products>
+
+    <product>
+        <code>QWZ5671</code>
+        <price>39.95</price>
+        <colors>
+            <color>Red</color>
+            <color>Burgundy</color>
+        </colors>
+    </product>
+
+    <product>
+        <code>RRX9856</code>
+        <price>42.50</price>
+        <colors>
+            <color>Red</color>
+            <color>Navy</color>
+            <color>Burgundy</color>
+        </colors>
+    </product>
+
+</products>
