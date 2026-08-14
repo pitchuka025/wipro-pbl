@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Student xmlns:info="http://example.com/student"
+         xmlns:marks="http://example.com/marks">
+
+    <info:StudentID>101</info:StudentID>
+    <info:Name>Rupa Sri</info:Name>
+    <info:DOB>2004-05-10</info:DOB>
+    <info:Gender>Female</info:Gender>
+    <info:Course>Information Technology</info:Course>
+
+    <marks:StudentID>101</marks:StudentID>
+    <marks:TheoryMarks>85</marks:TheoryMarks>
+    <marks:PracticalMarks>90</marks:PracticalMarks>
+    <marks:TotalMarks>175</marks:TotalMarks>
+    <marks:Grade>A</marks:Grade>
+
+</Student>

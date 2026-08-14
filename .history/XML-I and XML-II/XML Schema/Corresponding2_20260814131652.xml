@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Phones xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="Phones.xsd">
+
+    <Moto>
+        <Model>Moto E</Model>
+        <ModelNumber>123</ModelNumber>
+        <Processor>Qualcomm Snapdragon 200</Processor>
+        <Battery>2390 mAh</Battery>
+    </Moto>
+
+    <Beetel>
+        <Model>Beetel M71 Landline</Model>
+        <ModelNumber>456</ModelNumber>
+        <Display>LCD Screen</Display>
+        <Feature>Yes</Feature>
+    </Beetel>
+
+</Phones>

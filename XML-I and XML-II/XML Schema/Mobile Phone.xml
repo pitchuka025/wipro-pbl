@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Phones">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="Moto">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Model" type="xs:string"/>
+                            <xs:element name="ModelNumber" type="xs:int"/>
+                            <xs:element name="Processor" type="xs:string"/>
+                            <xs:element name="Battery" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="Beetel">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Model" type="xs:string"/>
+                            <xs:element name="ModelNumber" type="xs:int"/>
+                            <xs:element name="Display" type="xs:string"/>
+                            <xs:element name="Feature" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

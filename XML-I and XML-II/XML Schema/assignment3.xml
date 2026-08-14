@@ -1,0 +1,5 @@
+<xs:schema>
+    <xs:element name="...">
+        ...
+    </xs:element>
+</xs:schema>

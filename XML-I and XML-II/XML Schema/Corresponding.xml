@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="Student.xsd">
+
+    <StudentID>101</StudentID>
+    <Name>Rupa Sri</Name>
+    <DOB>2004-05-10</DOB>
+    <Gender>Female</Gender>
+    <Course>Information Technology</Course>
+
+    <TheoryMarks>85</TheoryMarks>
+    <PracticalMarks>90</PracticalMarks>
+    <TotalMarks>175</TotalMarks>
+    <Grade>A</Grade>
+
+</Student>

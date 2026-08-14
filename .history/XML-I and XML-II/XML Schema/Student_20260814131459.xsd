@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Student">
+        <xs:complexType>
+            <xs:sequence>
+
+                <xs:element name="StudentID" type="xs:int"/>
+                <xs:element name="Name" type="xs:string"/>
+                <xs:element name="DOB" type="xs:date"/>
+                <xs:element name="Gender" type="xs:string"/>
+                <xs:element name="Course" type="xs:string"/>
+
+                <xs:element name="TheoryMarks" type="xs:int"/>
+                <xs:element name="PracticalMarks" type="xs:int"/>
+                <xs:element name="TotalMarks" type="xs:int"/>
+                <xs:element name="Grade" type="xs:string"/>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
