@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MobileShowroom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="mobile.xsd">
+
+    <Mobile>
+        <ModelName>Edge 50</ModelName>
+        <ModelID>M001</ModelID>
+        <Brand>Motorola</Brand>
+        <Price>29999</Price>
+        <Color>Black</Color>
+        <SIMSize>Nano</SIMSize>
+        <Memory>128GB</Memory>
+        <Camera>Yes</Camera>
+        <TouchScreen>Yes</TouchScreen>
+        <NoSold>15</NoSold>
+        <storeName>store1</storeName>
+    </Mobile>
+
+    <Mobile>
+        <ModelName>Galaxy M14</ModelName>
+        <ModelID>M002</ModelID>
+        <Brand>Samsung</Brand>
+        <Price>13999</Price>
+        <Color>Blue</Color>
+        <SIMSize>Nano</SIMSize>
+        <Memory>128GB</Memory>
+        <Camera>Yes</Camera>
+        <TouchScreen>Yes</TouchScreen>
+        <NoSold>8</NoSold>
+        <storeName>store2</storeName>
+    </Mobile>
+
+    <Mobile>
+        <ModelName>K10 Power</ModelName>
+        <ModelID>M003</ModelID>
+        <Brand>Lenovo</Brand>
+        <Price>11999</Price>
+        <Color>Silver</Color>
+        <SIMSize>Micro</SIMSize>
+        <Memory>64GB</Memory>
+        <Camera>Yes</Camera>
+        <TouchScreen>Yes</TouchScreen>
+        <NoSold>12</NoSold>
+        <storeName>store3</storeName>
+    </Mobile>
+
+    <Mobile>
+        <ModelName>Redmi Note 14</ModelName>
+        <ModelID>M004</ModelID>
+        <Brand>Redmi</Brand>
+        <Price>15999</Price>
+        <Color>Green</Color>
+        <SIMSize>Nano</SIMSize>
+        <Memory>128GB</Memory>
+        <Camera>Yes</Camera>
+        <TouchScreen>Yes</TouchScreen>
+        <NoSold>6</NoSold>
+        <storeName>store1</storeName>
+    </Mobile>
+
+</MobileShowroom>
