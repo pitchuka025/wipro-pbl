@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<classroom xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="classroom.xsd">
+
+    <student rollno="1">
+        <firstname>Rahul</firstname>
+        <lastname>Kumar</lastname>
+        <division>A</division>
+        <marks>85</marks>
+    </student>
+
+    <student rollno="2">
+        <firstname>Ravi</firstname>
+        <lastname>Teja</lastname>
+        <division>B</division>
+        <marks>90</marks>
+    </student>
+
+    <student rollno="3">
+        <firstname>Sita</firstname>
+        <lastname>Devi</lastname>
+        <division>A</division>
+        <marks>88</marks>
+    </student>
+
+</classroom>

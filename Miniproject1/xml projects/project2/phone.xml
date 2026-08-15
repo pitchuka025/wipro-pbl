@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Phones
+    xmlns:basic="http://www.example.com/basic"
+    xmlns:feature="http://www.example.com/feature">
+
+    <basic:Phone>
+        <basic:name>Moto E</basic:name>
+        <basic:ModelNo>123</basic:ModelNo>
+        <basic:Processor>Qualcomm Snapdragon 200</basic:Processor>
+        <basic:Battery>2390 mAh</basic:Battery>
+    </basic:Phone>
+
+    <feature:Phone>
+        <feature:name>Beetel M71 Landline</feature:name>
+        <feature:ModelNo>456</feature:ModelNo>
+        <feature:Display>LCD Screen</feature:Display>
+        <feature:Corded>Yes</feature:Corded>
+    </feature:Phone>
+
+</Phones>
