@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX Application - State and Cities</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        select {
+            width: 250px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ddd;
+        }
+    </style>
+
+    <script>
+        function loadCities() {
+
+            // Get selected state
+            var state = document.getElementById("state").value;
+
+            // If no state selected
+            if (state == "") {
+                document.getElementById("cityTable").innerHTML = "";
+                return;
+            }
+
+            // Create AJAX object
+            var xhr = new XMLHttpRequest();
+
+            // Open connection to Servlet
+            xhr.open("GET", "cities?state=" + encodeURIComponent(state), true);
+
+            // Handle response
+            xhr.onreadystatechange = function () {
+
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                    // Display servlet response
+                    document.getElementById("cityTable").innerHTML =
+                        xhr.responseText;
+                }
+            };
+
+            // Send AJAX request
+            xhr.send();
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Select State</h2>
+
+    <select id="state" onchange="loadCities()">
+
+        <option value="">-- Select State --</option>
+
+        <option value="Andhra Pradesh">
+            Andhra Pradesh
+        </option>
+
+        <option value="Telangana">
+            Telangana
+        </option>
+
+        <option value="Karnataka">
+            Karnataka
+        </option>
+
+        <option value="Tamil Nadu">
+            Tamil Nadu
+        </option>
+
+        <option value="Maharashtra">
+            Maharashtra
+        </option>
+
+    </select>
+
+    <div id="cityTable"></div>
+
+</body>
+</html>
